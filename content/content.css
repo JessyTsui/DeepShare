@@ -1,0 +1,530 @@
+.deepshare-button {
+  transition: background-color 0.2s ease;
+  will-change: background-color;
+}
+
+.deepshare-button:hover {
+  background-color: rgba(77, 107, 254, 0.1);
+  border-radius: 4px;
+}
+
+.deepshare-menu-item {
+  transition: background-color 0.2s ease;
+  will-change: background-color;
+}
+
+.deepshare-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.deepshare-menu {
+  animation: fadeIn 0.2s ease-in-out;
+  will-change: opacity, transform;
+}
+
+/* 优化Markdown渲染样式 */
+.deepshare-markdown h1, 
+.deepshare-markdown h2, 
+.deepshare-markdown h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.deepshare-markdown h1 {
+  font-size: 2em;
+}
+
+.deepshare-markdown h2 {
+  font-size: 1.5em;
+}
+
+.deepshare-markdown h3 {
+  font-size: 1.25em;
+}
+
+.deepshare-markdown ul, 
+.deepshare-markdown ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.deepshare-markdown hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.deepshare-markdown blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+  margin: 0 0 16px 0;
+}
+
+.deepshare-markdown pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.deepshare-markdown code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.deepshare-markdown pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* 添加通知动画 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.deepshare-notification {
+  animation: fadeInUp 0.3s ease-out;
+  will-change: opacity, transform;
+}
+
+/* 添加容器样式以提高渲染性能 */
+.deepshare-container {
+  contain: content;
+}
+
+/* 直接分享按钮样式 */
+.direct-share-button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.direct-share-button:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .direct-share-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 分享预览容器样式 */
+.share-preview-container {
+  animation: fadeIn 0.25s ease;
+  z-index: 10000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(5px);
+}
+
+.share-preview-card {
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  background-color: white !important;
+}
+
+/* 修复滚动问题 */
+.share-preview-card > div:nth-child(2) {
+  overflow-y: auto !important;
+  flex: 1 1 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 主题边框容器 */
+.theme-frame {
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 主题按钮样式 */
+.theme-button {
+  transition: all 0.15s ease;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  font-size: 13px;
+  border-radius: 0.375rem;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.theme-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.theme-button:active {
+  transform: translateY(0);
+}
+
+/* 对话容器样式 */
+.conversation-container {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+/* 水印样式 */
+.watermark {
+  font-size: 12px;
+  opacity: 0.7;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  color: #6B7280 !important; /* 确保水印颜色不变 */
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* 保存按钮样式 */
+.save-image-button {
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  min-width: 120px;
+  height: 32px;
+}
+
+.save-image-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.save-image-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 滚动条美化 */
+.share-preview-card > div:nth-child(2)::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.share-preview-card > div:nth-child(2)::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.02);
+  border-radius: 8px;
+}
+
+.share-preview-card > div:nth-child(2)::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.share-preview-card > div:nth-child(2)::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+/* 处理暗色模式 */
+.dark .share-preview-card > div:nth-child(2)::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+}
+
+.dark .share-preview-card > div:nth-child(2)::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+}
+
+.dark .share-preview-card > div:nth-child(2)::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* 通知样式 */
+.deepshare-notification {
+  animation: fadeInUp 0.3s ease-out;
+  will-change: opacity, transform;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  z-index: 10001 !important;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 主题内容区域样式 */
+#preview-image-area {
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 主题内部内容包装器 */
+.conversation-wrapper {
+  background-color: #fff !important;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 现代化按钮样式 */
+.modern-button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modern-button:hover {
+  background-color: #E5E7EB !important;
+  color: #4B5563 !important;
+}
+
+.modern-button:active {
+  transform: scale(0.98);
+}
+
+.modern-save-button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px !important;
+  height: 44px !important;
+}
+
+.modern-save-button:hover {
+  background-color: #2563EB !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.modern-save-button:active {
+  transform: translateY(0);
+}
+
+.modern-save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 顶部栏样式 */
+.share-preview-card > div:first-child {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  background-color: #F9FAFB !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+/* 标题和日期样式 */
+.share-preview-card h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* 主题卡片样式 */
+.theme-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 主题按钮样式 */
+.theme-btn {
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.theme-btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.theme-btn:active {
+  transform: scale(0.92);
+}
+
+/* 主题选择器样式 */
+.theme-selector {
+  display: flex;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* 关闭按钮样式 */
+.close-btn {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #E5E7EB !important;
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+/* 保存按钮样式 */
+.save-button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.save-button:hover {
+  background-color: #2563EB !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.save-button:active {
+  transform: translateY(0);
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 修正用户消息和AI回答样式以确保在分享卡片中正确显示 */
+.share-preview-card .message.flex {
+  padding: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+.share-preview-card .user-message,
+.share-preview-card .fbb737a4 {
+  background-color: #F7F7F8 !important;
+  padding: 12px 16px !important;
+  border-radius: 6px !important;
+  margin-bottom: 2px !important;
+}
+
+.share-preview-card .ai-message,
+.share-preview-card .edb250b1,
+.share-preview-card .ds-markdown.ds-markdown--block {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* 确保内容区域样式正确 */
+.conversation-container {
+  line-height: 1.5;
+}
+
+.conversation-container p {
+  margin-bottom: 0.75rem;
+}
+
+.conversation-container ul, 
+.conversation-container ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.conversation-container code {
+  background-color: #f1f1f1;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875em;
+}
+
+.conversation-container pre {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.conversation-container pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.conversation-container h1, 
+.conversation-container h2, 
+.conversation-container h3, 
+.conversation-container h4, 
+.conversation-container h5, 
+.conversation-container h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.conversation-container h1 {
+  font-size: 1.5rem;
+}
+
+.conversation-container h2 {
+  font-size: 1.25rem;
+}
+
+.conversation-container h3 {
+  font-size: 1.125rem;
+}
+
+.conversation-container blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1rem;
+  color: #6b7280;
+  margin: 0.75rem 0;
+}
+
+/* 美化预览卡片内部元素 */
+#preview-image-area {
+  border-radius: 12px;
+}
+
+#preview-image-area > div {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 美化二维码区域 */
+#preview-image-area .w-16.h-16 {
+  border-radius: 4px;
+  overflow: hidden;
+} 
